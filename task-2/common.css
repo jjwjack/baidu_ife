@@ -1,0 +1,13 @@
+*{
+	font-family: 微软雅黑,黑体;
+}
+.nav{
+	height: 60px;
+	background-color: #000;
+	
+}
+.nav img{
+	width: 120px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
