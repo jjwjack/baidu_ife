@@ -1,0 +1,59 @@
+body{
+	margin: 0;
+}
+.out{
+	/*width: 100%*/
+	/*height: 1000px;*/
+	border: 1px solid #00f;
+	margin: 10px;
+	padding: 20px;
+	position: relative;
+
+}
+.out:before, .out:after{
+	content: "";
+	display: table;
+}
+.left{
+	border: 1px solid #f00;
+	width: 200px;
+	float: left;
+	/*position: absolute;*/
+}
+.photo{
+	width: 80px;
+	height: 80px;
+	float: left;
+	margin: 20px;
+
+}
+.left span{
+	float: left;
+	margin-top: 20px;
+}
+.right{
+	width: 120px;
+	border: 1px solid #f00;
+	/*position: absolute;*/
+	right: 20px;
+	float: right;
+
+}
+.right img{
+	width: 80px;
+	height: 80px;
+	/*将图片设置为block块级元素，不然默认边距*/
+	display: block;
+	margin: 20px 20px 20px 20px;
+	/*padding: 10px 0px 10px 0px;*/
+}
+.center{
+	position: absolute;
+	/*margin: 0px 20px 0px 20px;*/
+	/*width: 100%;*/
+	left: 240px;
+	right: 160px;
+	/*float: left;*/
+	height: 200px;
+	border: 1px solid #0f0;
+}
