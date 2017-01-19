@@ -1,59 +1,58 @@
 body{
 	margin: 0;
 }
+.clear{
+	clear: both;
+}
 .out{
-	/*width: 100%*/
-	/*height: 1000px;*/
+	/*width设置为100%，右边会顶到边，出现横滚动条*/
+	/*width: 100%;*/
 	border: 1px solid #00f;
 	margin: 10px;
 	padding: 20px;
-	position: relative;
-
-}
-.out:before, .out:after{
-	content: "";
-	display: table;
+	/*overflow可清除浮动*/
+	overflow: hidden;
 }
 .left{
+	background-color: #555;
+	float: left;
 	border: 1px solid #f00;
 	width: 200px;
-	float: left;
-	/*position: absolute;*/
+	/*设置display属性为内联表格，顶部对齐，但是不能靠右侧布局*/
+	/*display: inline-table;
+	vertical-align: top;*/
 }
+.center{
+	background-color: #aaa;
+	border: 1px solid #0f0;
+	margin-left: 240px;
+	margin-right: 160px;
+	min-width: 500px;
+}
+.right{
+	background-color: #eee;
+	float: right;
+	border: 1px solid #f00;
+	width: 120px;
+}
+
+
 .photo{
 	width: 80px;
 	height: 80px;
-	float: left;
 	margin: 20px;
-
 }
 .left span{
-	float: left;
-	margin-top: 20px;
-}
-.right{
-	width: 120px;
-	border: 1px solid #f00;
-	/*position: absolute;*/
-	right: 20px;
 	float: right;
-
+	margin-top: 20px;
+	margin-right: 10px;
 }
+
 .right img{
 	width: 80px;
 	height: 80px;
 	/*将图片设置为block块级元素，不然默认边距*/
 	display: block;
 	margin: 20px 20px 20px 20px;
-	/*padding: 10px 0px 10px 0px;*/
 }
-.center{
-	position: absolute;
-	/*margin: 0px 20px 0px 20px;*/
-	/*width: 100%;*/
-	left: 240px;
-	right: 160px;
-	/*float: left;*/
-	height: 200px;
-	border: 1px solid #0f0;
-}
+

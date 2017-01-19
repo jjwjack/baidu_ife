@@ -4,7 +4,7 @@
 |:-----:|:-------:|:-------:|
 |task-1|[任务一：零基础HTML编码](https://jjwjack.github.io/baidu_ife/task-1/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 |task-2|[任务二：零基础HTML及CSS编码（一）](https://jjwjack.github.io/baidu_ife/task-2/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
-
+|task-2|[任务三：三栏式布局](https://jjwjack.github.io/baidu_ife/task-3/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 
 
 
