@@ -1,0 +1,154 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 微软雅黑,黑体;
+}
+body{
+	background-color: #ccc;
+	border: 1px solid #f00;
+	/*width: 100%;*/
+
+	/*设置最小宽度，防止缩放时破坏布局*/
+	min-width: 800px;
+}
+.clearfloat{
+	clear: both;
+}
+/*导航栏设置*/
+/*采取导航div相对定位（相对定位以自身位置为参考点，脱离文档流），里面的ul绝对定位固定在右边（绝对定位以父级元素为参照点），ul里面的li浮动成为一行。*/
+.nav{
+	height: 60px;
+	width: 100%;
+	background-color: #333;
+
+}
+.nav img{
+	width: 120px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.nav ul{
+	/*这个地方还是不用定位好，直接用浮动*/
+	float: right;
+	margin-right: 20px;
+
+}
+.nav li{
+	float: left;
+	margin-left: 50px;
+	margin-top: 20px;
+
+}
+a{
+	text-decoration: none;
+}
+.nav li a:link{
+	color: #fff;
+}
+.nav li a:visited{
+	color: #0f0;
+}
+.nav li:hover{
+	color: #f00;
+}
+.nav li a:hover{
+	color: #f00;
+}
+.nav li a:active{
+	color: #ff0;
+}
+.main{
+	margin-right: 450px;
+	min-width: 300px;
+}
+.aside{
+	float: right;
+}
+/*每页设置*/
+.page{
+	background-color: #fff;
+	margin: 20px;
+	padding: 20px;
+	width: auto;
+	box-shadow: 3px 3px 3px #555;
+}
+.page img{
+	width: 70%;
+}
+.goodlook img{
+	border: 1px solid #0f0;
+}
+.table-1{
+	width: 100%;
+	/*border:1px solid #aaa;*/
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+.table-1 th{
+	background-color: #000;
+	color: #fff;
+	font-weight: bold;
+	border: 1px solid #aaa;
+}
+.table-1 td{
+	border: 1px solid #aaa;
+
+}
+.table-1 tr:last-child{
+	border-collapse: collapse;
+	background-color: #aaa;
+	font-weight: bold;
+}
+
+.aside h2{
+	border-left: 3px solid #aaa;
+	padding-left: 5px;
+}
+/*注册界面*/
+.register{
+	border: 1px solid #f00;
+	/*margin-left: 400px;*/
+	/*width: 100%;*/
+}
+.register td{
+	padding: 10px;
+}
+.register td:nth-child(1){
+	color: #0f0;
+	text-align: right;
+}
+.tips{
+	color: #aaa;
+}
+.register textarea{
+	height: 200px;
+	width: 200px;
+	value:"123";
+}
+.profile{
+	vertical-align: top;
+}
+.submit{
+	width: 100%;
+	height: 40px;
+	background-color: #00f;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 10px;
+}
+.copyright{
+	/*float: left;*/
+	/*float貌似就不能100%了*/
+	width: 100%;
+	height: 80px;
+	background-color: #000;
+	color: #fff;
+	/*这个地方不能用vertical-align!!*/
+	padding-top: 25px;
+	text-align: center;
+}
+
+
+  

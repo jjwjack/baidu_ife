@@ -11,7 +11,8 @@ body{
 	margin: 10px;
 	padding: 20px;
 	/*overflow可清除浮动*/
-	overflow: hidden;
+	/*overflow: hidden;*/
+	min-width: 500px;
 }
 .left{
 	background-color: #555;
@@ -27,7 +28,7 @@ body{
 	border: 1px solid #0f0;
 	margin-left: 240px;
 	margin-right: 160px;
-	min-width: 500px;
+	/*min-width: 500px;*/
 }
 .right{
 	background-color: #eee;
@@ -47,7 +48,9 @@ body{
 	margin-top: 20px;
 	margin-right: 10px;
 }
-
+.center img{
+	width: 70%;
+}
 .right img{
 	width: 80px;
 	height: 80px;
