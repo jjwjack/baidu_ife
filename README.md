@@ -7,6 +7,7 @@
 |task-3|[任务三：三栏式布局](https://jjwjack.github.io/baidu_ife/task-3/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 |task-4|[任务四：定位和居中问题](https://jjwjack.github.io/baidu_ife/task-4/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 |task-5|[任务五：零基础HTML及CSS编码（二](https://jjwjack.github.io/baidu_ife/task-5/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
+|task-5|[任务六：通过HTML及CSS模拟报纸排版](https://jjwjack.github.io/baidu_ife/task-6/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 
 
 
