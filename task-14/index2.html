@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3>污染城市列表</h3>
+	<ul id="aqi-list">
+		<!-- <li>第一名：福州（样例），10</li>
+		<li>第二名：福州（样例），10</li> -->
+	</ul>
+</body>
+<script>
+	var aqiData=[
+		["北京",90],
+		["上海",40],
+		["福州",10],
+		["广州",50],
+		["成都",80],
+		["西安",100],
+	];
+	(function(){
+		/*
+		 在注释下方编写代码
+		 遍历读取aqiData中各个城市的数据
+		 将空气质量指数大于60的城市显示到aqi-list的列表中
+		 */
+		var aqi_list = document.getElementById("aqi-list");
+		aqiData.sort(function(a,b){
+			return b[1]-a[1];
+		});
+		for (var i = 0; i < aqiData.length; i++) {
+			if (aqiData[i][1]>60) {
+				var chinese = ["一","二","三","四","五","六","七","八","九","十"];
+				var aqi_li = document.createElement("li");
+				aqi_li.innerHTML = "第" + chinese[i] + "名" + aqiData[i];
+				aqi_list.appendChild(aqi_li);
+			}
+			console.log(aqiData[i]);
+		}
+		
+
+		/*var aqi_list = document.getElementById("aqi-list");
+		//创建数组，存储污染指数
+		var arrayNum = [];
+		//筛选大于60的指数
+		for (var i = 0; i < aqiData.length; i++) {
+			if (aqiData[i][1]>60) {
+				arrayNum.push(aqiData[i][1]);
+			}
+		}
+		//排序函数
+		function sortNum(a,b){
+			return b-a;
+		};
+		//按从大到小排序
+		arrayNum.sort(sortNum);
+		//遍历指数数组，里面再遍历城市数组，如果指数相同，就添加一行li标签，输出这个城市和污染指数
+		for (var i = 0; i < arrayNum.length; i++) {
+			for(var j = 0; j < aqiData.length; j++){
+				if(arrayNum[i] == aqiData[j][1]){
+					var aqi_list_li = document.createElement("li");
+					//把阿拉伯数字转成汉字
+					var chinese = ["一","二","三","四","五","六","七","八","九","十"];
+					aqi_list_li.innerHTML = "第"+(chinese[i])+"名"+aqiData[j];
+					aqi_list.appendChild(aqi_list_li);
+				}
+			}
+		}*/
+	})();
+</script>
+</html>
