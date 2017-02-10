@@ -27,61 +27,84 @@
 	 * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
 	 * 返回一个数组，格式见函数中示例
 	 */
-	var data = [[]];
-	  var source = document.getElementById("source");
-	  var array1 = source.getElementsByTagName("li");
-	  data[0] = array1[0].innerText.match(/：(\d+)/)[1];
-	  data[1] = array1[0].innerText.match(/([\u4e00-\u9fa5]+)空气/)[1];
-	  console.log(data[1]);
 
 	function getData() {
-	  /*
-	  coding here
-	  */
-	  var data = [];
-	  var source = document.getElementById("source");
-	  var array1 = document.getElementsByTagName("li");
-	  console.log(array1.length);
-	  /*
-	  data = [
-	    ["北京", 90],
-	    ["北京", 90]
-	    ……
-	  ]
-	  */
-
-	  return data;
-
+		/*
+		coding here
+		*/
+		var source = document.getElementById("source");
+		var array_li = source.getElementsByTagName("li");
+		var data = [];
+		var data_city = [];
+		var data_num = [];
+		for (var i = 0; i < array_li.length; i++) {
+			data_city[i] = array_li[i].innerText.match(/([\u4e00-\u9fa5]+)空气/)[1];
+			data_num[i] = array_li[i].innerText.match(/：(\d+)/)[1];
+		}
+		for (var i = 0; i < data_city.length; i++) {
+			//先声明一维数组，再通过循环生成二维数组
+			/*data[i] = [];
+			data[i][0] = data_city[i];
+			data[i][1] = data_num[i];*/
+			data.push([data_city[i],data_num[i]]);
+		}
+		//评分第一那个，用的是split截取“空气质量：”，创建二维数组时，直接data.push([city,num])，觉得这样比较好。
+		// console.log(data[0][0]);
+		/*
+		data = [
+		["北京", 90],
+		["北京", 90]
+		……
+		]
+		*/
+		return data;
 	}
-
 	/**
 	 * sortAqiData
 	 * 按空气质量对data进行从小到大的排序
 	 * 返回一个排序后的数组
 	 */
 	function sortAqiData(data) {
+		
+		data.sort(function(a,b){
+			return b[1] - a[1];
+		});
+		return data;
 
 	}
-
 	/**
 	 * render
 	 * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
 	 * 格式见ul中的注释的部分
 	 */
 	function render(data) {
-
+		var resort = document.getElementById("resort");
+		
+		var chinese = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+		// <li>第一名：北京空气质量：<b>90</b></li>
+		for (var i = 0; i < data.length; i++) {
+			var resort_li = document.createElement("li");
+			resort_li.innerHTML = "第" + chinese[i] + "名：" + data[i][0] + "空气质量：<b>" + data[i][1] + "</b>";
+			resort.appendChild(resort_li);
+		}
+		
 	}
 
 	function btnHandle() {
-	  var aqiData = getData();
-	  aqiData = sortAqiData(aqiData);
-	  render(aqiData);
+		var aqiData = getData();
+		aqiData = sortAqiData(aqiData);
+		render(aqiData);
 	}
 
 
 	function init() {
-
-	  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+		// 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+		var sort_btn = document.getElementById("sort-btn");
+		sort_btn.onclick = function(){
+			btnHandle();
+			//点击后禁用按钮
+			sort_btn.disabled = true;
+		};
 
 	}
 

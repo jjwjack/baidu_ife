@@ -10,6 +10,7 @@
 |task-6|[任务六：通过HTML及CSS模拟报纸排版](https://jjwjack.github.io/baidu_ife/task-6/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 |task-13|[任务十三：零基础JavaScript编码（一）](https://jjwjack.github.io/baidu_ife/task-13/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 |task-14|[任务十四：零基础JavaScript编码（二）](https://jjwjack.github.io/baidu_ife/task-14/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
+|task-15|[任务十五：零基础JavaScript编码（三）](https://jjwjack.github.io/baidu_ife/task-15/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 
 
 
