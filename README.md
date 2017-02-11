@@ -11,6 +11,7 @@
 |task-13|[任务十三：零基础JavaScript编码（一）](https://jjwjack.github.io/baidu_ife/task-13/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 |task-14|[任务十四：零基础JavaScript编码（二）](https://jjwjack.github.io/baidu_ife/task-14/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 |task-15|[任务十五：零基础JavaScript编码（三）](https://jjwjack.github.io/baidu_ife/task-15/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
+|task-16|[任务十六：零基础JavaScript编码（四）](https://jjwjack.github.io/baidu_ife/task-16/index.html)|[查看代码](https://github.com/jjwjack/baidu_ife)|
 
 
 
