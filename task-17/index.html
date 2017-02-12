@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<fieldset id="form_gra_time">
+		<legend>请选择日期粒度：</legend>
+		<label for="">日<input type="radio" name = "gra_time" value="day" checked="checked"></label>
+		<label for="">周<input type="radio" name = "gra_time" value="week" checked="checked"></label>
+		<label for="">月<input type="radio" name = "gra_time" value="month" checked="checked"></label>
+	</fieldset>
+
+	<fieldset>
+		<legend>请选择查看的城市：</legend>
+		<select name="" id="city_select">
+			<option value="">北京</option>
+		</select>
+	</fieldset>
+	<div id="aqi_chart_wrap" style="border:1px solid #000; width:1000px; height:400px; position:relative; vertical-align: bottom">
+		<!-- <div style="width:10px; height:100px; background-color: #f00; position:absolute; bottom:0; left:110px;" title="123"></div>
+		<div style="width:10px; height:150px; background-color: #ff0; position:absolute; bottom:0; left:120px;"></div>
+		<div style="width:10px; height:200px; background-color: #f0f; position:absolute; bottom:0; left:130px;;"></div>
+		<div style="width:10px; height:300px; background-color: #f00; position:absolute; bottom:0; left:140px;;"></div> -->
+		<!-- <div style="width:10px; height:100px; background-color: #f00; float: left; display: table-cell;vertical-align: bottom"></div>
+		<div style="width:10px; height:200px; background-color: #f00; float: left; display: table-cell; vertical-align: bottom"></div> -->
+	</div>
+</body>
+<script src = "test.js"></script>
+</html>
