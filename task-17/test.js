@@ -35,13 +35,23 @@ var myAqi = [];
 var json_city = {};
 for (var i = 1; i < 32; i++) {
 	myDate[i-1] = "2016-01-" + (i<10?("0"+i):i);
-	myAqi[i-1] = Math.ceil(Math.random()*500);
+	myAqi[i-1] = Math.ceil(Math.random()*400);
 	json_city[myDate[i-1]] = myAqi[i-1];
 }
 // console.log(json_city);
+aqiSourceData["北京"] = json_city;
 
-
-
+function getColor(){
+	//生成颜色
+	var colorNum = [0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"];
+	var strColor = "#";
+	for (var i = 0; i < 6; i++) {
+		strColor += colorNum[Math.ceil(Math.random()*16)];
+	}
+	return strColor;
+	
+}
+getColor();
 function chartDay(){
 	var aqi_beijing = aqiSourceData["北京"];
 	console.log(aqi_beijing[0]);
@@ -50,7 +60,7 @@ function chartDay(){
 		var aqi_day = document.createElement("div");
 		// console.log(aqiSourceData["北京"][1]);
 		// aqi_day.innerHTML = null;
-		aqi_day.innerHTML = "<div style='width:10px; height:"+aqiSourceData["北京"][key]+"px; background-color: #f00; position:absolute; bottom:0; left:"+(100+i_beijing*10)+"px;' title='123'>"
+		aqi_day.innerHTML = "<div style='width:10px; height:"+aqiSourceData["北京"][key]+"px; background-color: " + getColor() +"; position:absolute; bottom:0; left:"+(100+i_beijing*10)+"px;' title='123'>"
 		i_beijing += 1;
 		// aqi_day.innerHTML = "<div style='width:10px; height:111px; background-color: #f00; position:absolute; bottom:0; left:111px;' title='123'></div>";
 		// console.log(aqi_day);
@@ -62,5 +72,5 @@ function chartDay(){
 function init(){
 	chartDay();
 }
-// init();
+init();
 
