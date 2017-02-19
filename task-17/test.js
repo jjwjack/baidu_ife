@@ -32,20 +32,56 @@ var aqi_chart_wrap = document.getElementById("aqi_chart_wrap");
 //获取城市select标签
 var city_select = document.getElementById("city_select");
 var cities = ["北京", "天津", "上海", "广州"];
-
+//先定义被选中的城市，不然radioTime改变时显示未定义
+var city_selected;
 //option的onchange事件，选择城市，画出图表
 city_select.onchange = function(){
-	aqi_chart_wrap.innerHTML = null;
-	var city_selected = city_select.options[city_select.selectedIndex].text;
-	drawDay(city_selected);
-	drawWeek(city_selected);
+	
+	city_selected = city_select.options[city_select.selectedIndex].text;
+	for (var i = 0; i < radioTime.length; i++) {
+		if (radioTime[i].value == "day") {
+			aqi_chart_wrap.innerHTML = null;
+			drawDay(city_selected);
+		}else if(radioTime[i].value == "week"){
+			aqi_chart_wrap.innerHTML = null;
+			drawWeek(city_selected);
+		}else{
+			console.log(radioTime[i]);
+		}
+	}
+	
 };
+//获取radio的值，日周月切换
+var radioTime = document.getElementsByName("gra_time");
+// function radioTime(){
+	for (var i = 0; i < radioTime.length; i++) {
+		radioTime[i].onclick = function(){
+			if (this.value == "week") {
+				aqi_chart_wrap.innerHTML = null;
+				drawWeek(city_selected);
+			}else if(this.value == "day"){
+				aqi_chart_wrap.innerHTML = null;
+				drawDay(city_selected);
+			}else{
+				console.log("月");
+			}
+		};
+		
+	}
+// }
+// radioTime();
+//radioTime改变的事件，选择事件，画出图表
+// radioTime.checked.onchange = function(){
+// 	console.log(123);
+// };
+// console.log(radioTime.value);
 //生成日期和aqi,添加进aqiSourceData表
 function createSource(){
 	for (var i = 0; i < cities.length; i++) {
 		aqiSourceData[cities[i]] = createAqi();
 	}
 }
+//调用createSource，生成json格式资源
 createSource();
 //随机生成aqi数值
 function createAqi(){
@@ -118,11 +154,13 @@ function drawWeek(city){
 		}
 		i += 1;
 	}
-	console.log(week1);
-	console.log(week2);
-	console.log(week3);
-	console.log(week4);
-	console.log(week5);
+	var weeks = [week1/7,week2/7,week3/7,week4/7,week5/(i-1-28)];
+	for (var i = 0; i < weeks.length; i++) {
+		var aqi_week = document.createElement("div");
+		aqi_week.innerHTML = "<div style = 'width:70px; height:"+ weeks[i]+"px; background-color:"+ createColor() +"; position:absolute; bottom:0; left:"+ (100+i*70) +"px;'></div>";
+		aqi_chart_wrap.appendChild(aqi_week);
+	}
+	
 }
 
 
