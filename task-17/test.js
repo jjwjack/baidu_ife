@@ -34,25 +34,42 @@ var city_select = document.getElementById("city_select");
 var cities = ["北京", "天津", "上海", "广州"];
 //先定义被选中的城市，不然radioTime改变时显示未定义
 var city_selected;
+//获取radio的值，日周月切换
+var radioTime = document.getElementsByName("gra_time");
 //option的onchange事件，选择城市，画出图表
 city_select.onchange = function(){
 	
 	city_selected = city_select.options[city_select.selectedIndex].text;
-	for (var i = 0; i < radioTime.length; i++) {
-		if (radioTime[i].value == "day") {
+	switch(true){
+		case radioTime[0].checked:
 			aqi_chart_wrap.innerHTML = null;
 			drawDay(city_selected);
-		}else if(radioTime[i].value == "week"){
+			break;
+		case radioTime[1].checked:
 			aqi_chart_wrap.innerHTML = null;
 			drawWeek(city_selected);
-		}else{
-			console.log(radioTime[i]);
-		}
+			break;
+		case radioTime[2].checked:
+			// aqi_chart_wrap.innerHTML = null;
+			// drawDay(city_selected);
+			break;
+		default:
+			console.log("error");
 	}
+		
+
+	// for (var i = 0; i < radioTime.length; i++) {
+	// 	if (radioTime[i].checked) {
+	// 		// aqi_chart_wrap.innerHTML = null;
+	// 		// drawDay(city_selected);
+	// 		console.log("checked");
+	// 	}else{
+	// 		console.log(radioTime[i]);
+	// 	}
+	// }
 	
 };
-//获取radio的值，日周月切换
-var radioTime = document.getElementsByName("gra_time");
+//切换时间，画出图表
 // function radioTime(){
 	for (var i = 0; i < radioTime.length; i++) {
 		radioTime[i].onclick = function(){
@@ -69,12 +86,7 @@ var radioTime = document.getElementsByName("gra_time");
 		
 	}
 // }
-// radioTime();
-//radioTime改变的事件，选择事件，画出图表
-// radioTime.checked.onchange = function(){
-// 	console.log(123);
-// };
-// console.log(radioTime.value);
+
 //生成日期和aqi,添加进aqiSourceData表
 function createSource(){
 	for (var i = 0; i < cities.length; i++) {
